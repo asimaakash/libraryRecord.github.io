@@ -163,7 +163,7 @@ function searchBook(){
             
             if(element.name.includes(txt))
             {
-                // record[index].style.display = "block";
+                record[index].style.display = "block";
 
             }
             else{

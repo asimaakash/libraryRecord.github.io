@@ -161,11 +161,15 @@ function searchBook(){
     if(bookList.length>0)
     {
         bookList.forEach((element,index)=>{
-            console.log(element.name);
+            // console.log(element.name);
             
             if(element.name.toLowerCase().includes(txt))
             {
-                record[index].style.display = "block";
+                record[index].style.display = "flex";
+                record[index].style.justifyContent = "space-around";
+                record[index].style.width = '100%' ;
+
+
 
             }
             else{

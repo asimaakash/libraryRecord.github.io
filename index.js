@@ -155,13 +155,15 @@ function searchBook(){
        bookList = [];
     }
     let txt = searchTxt.value;
+    txt.toLowerCase();
+
     let record = document.getElementsByClassName("record");
     if(bookList.length>0)
     {
         bookList.forEach((element,index)=>{
             console.log(element.name);
             
-            if(element.name.includes(txt))
+            if(element.name.toLowerCase().includes(txt))
             {
                 record[index].style.display = "block";
 

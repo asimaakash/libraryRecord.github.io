@@ -155,7 +155,7 @@ function searchBook(){
        bookList = [];
     }
     let txt = searchTxt.value;
-    txt.toLowerCase();
+    txt = txt.toLowerCase();
 
     let record = document.getElementsByClassName("record");
     if(bookList.length>0)

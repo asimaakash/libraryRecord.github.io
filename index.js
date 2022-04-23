@@ -156,25 +156,28 @@ function searchBook(){
     }
     let txt = searchTxt.value;
     txt = txt.toLowerCase();
-
-    let record = document.getElementsByClassName("record");
-    if(bookList.length>0)
+    // let record = document.getElementsByClassName("record");
+    let tableBody = document.getElementById("tableBody");
+    if(bookList.length>0 )
     {
-        bookList.forEach((element,index)=>{
-            // console.log(element.name);
+       
+        tableBody.innerHTML = "";
+        for(let i=0;i<bookList.length;i++){
             
-            if(element.name.toLowerCase().includes(txt))
+        
+            if(bookList[i].name.toLowerCase().includes(txt))
             {
-                record[index].style.display = "flex";
-                record[index].style.justifyContent = "space-around";
-                record[index].style.width = '100%' ;
-
-
-
-            }
-            else{
-                record[index].style.display = "none";
-            }
-        })
+                tableBody.innerHTML += `<tr class="record">
+    
+                <td>${bookList[i].name}</td>
+                <td>${bookList[i].author}</td>
+                <td>${bookList[i].type}</td>
+                <td><button id="${i}" onclick="remove(this.id)" type="button" class="btn btn-danger btn-sm">Remove</button></td>
+                </tr>
+            `;
+              }
+              
+          
+        }
     }
 }
